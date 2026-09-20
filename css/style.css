@@ -1,0 +1,254 @@
+body{
+     background:url(../img/03.png)repeat;
+     background-size:150px;
+}
+/*浮動疊層 position:absolute;*/
+
+
+
+div{
+    background-color: none;
+    
+}
+
+.container-box{
+    box-shadow: inset 0px 0px 20px 14px #090909;
+}
+
+.nav-after1{
+    width:100%;
+    height:100%;
+    position:absolute;
+    border:0.5px solid rgb(60, 255, 144);/*為什麼這個的長寬不是跟body一樣大*/
+    overflow: hidden; /*將右側超出的眶隱藏*/
+}
+/*
+.nav-after1::after{
+    position:absolute;
+    content: "";
+    width: 100%;
+    height:300px;
+    background-image:url("../img/09.png");
+    background-size:150px;
+    background-repeat:repeat-x;
+    z-index:3;
+    top:-15px;
+    filter: drop-shadow(0px 0px 2px #72624d);
+}
+    */
+/*
+.nav-after1::before{
+    position:absolute;
+    content: "";
+    width: 100%;
+    height:500px;
+    background-image:url("../img/10.png");
+    background-size:50px;
+    background-repeat:no-repeat;
+    z-index:3;
+    background-position:top right;
+    top:40px;
+    right:-10px;
+}
+*/
+.nav-div{
+    position:absolute;
+}
+.matou{
+    position:absolute;
+    margin-top:9rem;
+    width:100%;
+    height:15rem;
+    background-image:url("../img/02.png");
+    background-size:contain;
+    background-repeat:repeat-x;
+
+}
+.matou::after{
+    position:absolute;
+    content: "";
+    width:100%;
+    height:15rem;
+    background-size:contain;
+    background-image:url("../img/02-1.png");
+    mix-blend-mode:overlay;
+    z-index:-2;
+}
+.matou::before{
+    position:absolute;
+    content: "";
+    width:100%;
+    height:15rem;
+    background-size:contain;
+    background-image:url("../img/02-2.png");
+    opacity:0.7;
+    z-index:-1;
+}
+
+.nav-flex{
+        width:100%;
+        height:100%;
+        background-size: 5rem;
+        background-color:transparent;
+        background-image:url("../img/01.png");   
+        background-repeat:repeat-x ;
+        position:absolute;
+        color: transparent;/*隱藏文字*/
+        margin-bottom: 3em;
+        top:-9px;
+        overflow : hidden; /*將右側超出的眶隱藏*/
+    
+}
+/*蕾絲*/
+
+
+.nav-flex::after{
+    position:absolute;/*不知道為甚麼要寫這個*/
+    content: "";
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: 50px;
+    width: 500px;
+    height: 500px;
+    left:50vw;/*被內容影響所以要定位至左邊*/
+}
+
+
+.nav-flex::before{
+    position:absolute;/*不知道為甚麼要寫這個*/
+    content: "";
+    background-image: url(../img/07.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 150px;
+    height:500px; 
+    right: -50px;/*定位至最右邊*/
+    top:-40px;
+}/*花草2*/
+
+.main-content{   
+    text-align: center;
+    padding: 7em;
+    /* padding-bottom:2em;  */    /*註解這個能去掉最底下沒被遮罩影響的空白部分*/
+    padding-top:320px;   
+    border:0.5px #fff solid;
+    position: relative;
+    box-shadow: inset 0px 0px 20px 14px #090909; /* 陰影 */
+    z-index: 999;
+}
+.main-content::after{
+    position:absolute;/*不知道為甚麼要寫這個*/
+    content:"";
+    background-image:url("../img/04.png");
+    background-size:150px;
+    background-repeat:no-repeat;
+    width:160px;
+    height:55%;
+    left:-65px;/*因為.main-content的物件都被固定在中間且被設定了padding*/
+    z-index:1;
+    bottom:-90px;
+    
+}/*花草1*/
+
+
+
+
+
+
+
+
+
+.main-content img{
+    object-fit: contain;
+    width: 20%;
+    /* margin-bottom: 10%;   <------這行導致濟圖片沒辦法置中 */
+}
+/*希望縮到一定尺寸就不會再縮小*/
+
+.nav-list{
+    padding-left:5%;
+    padding-right:5%;
+    display: flex;
+    justify-content: center;
+    gap: 7%;
+    margin-top: 6rem;
+}
+.nav-list button{
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+
+  background: none;
+  border-radius:10px;
+  border:0.5px #fff solid;
+  color:#fff;
+}
+/*統一大小長度 圓角  顏色更動 底色透明 白字 
+縮到一定尺寸更換為圖示? 更換字形*/
+.nav-list button:hover{
+    background: #a9adb5;
+}
+.nav-list button img{
+    /*調整圖片大小*/
+    height:80%;
+}
+
+/* 濟圖片置中 */
+.button-center{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.nav-floor{
+    background-image:url("../img/06.png");
+    background-size:100px;
+    width:100%;
+    height:378px; 
+    position:absolute; /*解決底部問題*/
+    
+}
+.nav-floor::after{
+    background: linear-gradient(to bottom, rgba(237,193,83,0.7) 0%,rgba(247,226,176,0) 54%,rgba(253,249,238,0) 90%,rgba(255,255,255,0) 100%);
+    width:100%;
+    height:100%; /*調整100%填滿*/
+    content:"";
+    position:absolute;
+    left:0px;
+    mix-blend-mode:overlay;
+}
+.nav-floor::before{
+   background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+    width:100%;
+    height:100%; /*調整100%填滿*/
+    content:"";
+    position:absolute;
+    left:0px;
+    mix-blend-mode:overlay;
+}
+
+
+/*要有奇怪的花花還有裝飾用吊墜 背景跟地板顏色還要改*/
+
+@media (max-width: 768px) {
+    /*按鈕變成2*2*/
+    .nav-list{
+        flex-wrap: wrap; /*讓按鈕能換行*/
+        gap: 20px; /*讓行與行之間有間距*/
+    }
+    .nav-list button{
+        width: 45%; /*讓按鈕變寬以適應換行*/
+    }
+
+    .main-content::after{
+                width: 145px; /*調整左邊花花的大小*/
+        background-size: 145px;
+    }
+    
+}
+
+@media (max-width: 600px) {
+        .image-word{
+        display:none; /*隱藏按鈕文字*/
+    }
+}

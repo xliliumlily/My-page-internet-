@@ -1,0 +1,327 @@
+body{
+    background:url(../img/03.png)repeat;
+    background-size:150px;
+    margin: 0px;
+}
+div{
+    background-color: none;
+    
+    color: #fff;
+}
+.nav-top{
+    color: transparent;
+    position: fixed;
+    width:100%;
+    height:100px;
+    background:url(../img/02/03.png)repeat-x;
+    background-size:38px;
+    padding:0.7%;
+    top: 0px;
+    z-index:999;
+}
+.nav-button{
+    float: right;
+}
+.nav-button button:hover{
+    background-color: #86711d;
+}
+.nav-top button{
+    /*預設top上的全部按鈕包含電腦版與縮起來的版本*/
+    /*想再更寬鬆一點*/
+    margin-right:3px;
+    font-family: "Cactus Classical Serif", serif;
+    font-size:14px;
+    background: none;
+    border-radius:10px;
+    border:0.5px #fff solid;
+    color:#fff;
+}
+
+.nav-button-phone{
+    display:none; /*手機板按鈕，預設隱藏*/
+    position: relative;
+}
+
+.phone-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 140px;
+    background: rgba(53, 25, 5, 0.883);
+    border-radius: 10px;
+    padding: 8px;
+}
+.phone-menu button{
+    border:none;    
+}
+.phone-menu button:hover{
+    background: rgba(29, 13, 2, 0.9);
+    border-radius: 0px;
+}
+
+.phone-menu.active {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+/*-------------------------頂端--------------------------*/
+
+hr{
+    display: inline-block;
+    width: 100%;
+    margin-top:0;
+    /*這兩行我動到什麼了為甚麼需要加!important*/
+    border: 0.25px solid #ffffff !important;
+    opacity:1 !important;
+    
+}
+.nav-years p{
+    margin-bottom:-1%;
+    filter: drop-shadow(0px 0px 2px #72624d);
+}
+
+.nav-main{
+    /* border-top:2px #fff solid; */
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-family: "Bodoni Moda", serif;
+    position: relative;
+    margin: 0 10%; /*0 10%=左右10% 上下0% */
+    background-image: url(../img/02/01.png);
+    border-radius: 5px  0  5px 5px;
+    padding: 5%;
+    /* margin-top: 18%; */
+    margin-bottom: 20%;
+    text-align: center;
+    
+    /*把背景圖弄暗一點*/
+}
+.nav-main::before{
+    /* content:"";
+    position: absolute;
+    background:url(../img/02/04.png)no-repeat;
+    background-size:7em;
+    height:100%;
+    width: 100%;
+    left: 0;
+    top:-1.8em; */
+}
+
+/*一列四格，且縮到一定尺寸自動切換成3/2，會自動換行，圖片大小不變   <---grid */
+.card-text{
+    font-family: "Noto Serif TC", serif;
+    font-weight: 500;
+    text-align: left;
+    font-size:15px;
+    color: #a04210;
+}
+.card img{
+    border-radius:10px;
+}
+.card{
+    margin:10px;
+    width: 22% !important;
+    background: none !important;
+    border:none !important;
+}   
+.card-body{
+    padding:0px !important;
+}
+
+#page1 .nav-card-img-all{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 改成一排 4 張 */
+    gap: 0 4%;                         
+    margin-bottom: 10%;
+}
+
+
+#page1 .card{
+    width: 100% !important;
+    margin: 0;
+    background: none !important;
+    border: none !important;
+}
+
+#page1 .card img{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;      /* 垂直置中對齊 */
+    /* gap: 20px; */
+    padding: 0 10%;
+    margin-top: 18%;
+    justify-content: space-between; /*讓標題和nav分開 */
+    white-space: nowrap;
+}
+
+.irasuto-header{
+    /*作品合集改成獨立class 比較好弄頁籤*/
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-family: "Bodoni Moda", serif;
+    border-radius: 15px;
+    padding-top: 3%;
+    margin-top: 18%;
+    background: url(../img/02/04.png) no-repeat;
+    background-size: 7em;
+    min-height: 30px; /*作品合集限制最小高度以免跑版*/
+    width: 50%;
+    left: 0;
+    height: auto;
+    margin: 0;
+}
+
+.header-row .nav{
+    display: flex;
+    white-space: nowrap !important; /*頁籤防止換行*/
+}
+
+.nav a{
+    font-family: "Cactus Classical Serif", serif;
+    color: #fff;
+    filter: drop-shadow(0px 0px 2px #72624d);
+    min-height: 46px; 
+}
+.nav a:hover{
+    color: #fda22b;
+}
+
+
+.header-row ul{
+    background: none;
+}
+
+/* 頁籤 */
+.header-row .nav-link{
+    font-family: "Cactus Classical Serif", serif;
+    color: #fff;
+    min-height: 46px;
+    padding: 12px 32px;
+    border-radius: 14px 14px 0 0;
+    overflow: hidden;
+}
+
+/* 未開啟的頁籤 */
+.header-row .nav-link:not(.active){
+    background-color: #5a412c;
+}
+
+/* 目前頁面 */
+.header-row .nav-link.active{
+    background: url(../img/02/01.png) repeat;
+    color: rgb(109, 72, 4);
+    border: 1px solid #fff;
+    border-bottom: none;
+    border-radius: 14px 14px 0 0;
+    overflow: hidden;
+}
+
+/*---------------------------------------更改了點開大圖的基本樣式------------------------------------------*/
+/*大圖背景顏色*/
+.modal-content{
+    border:1px #482806 solid !important;
+    background:url(../img/02/05.png) !important;
+    background-color: #ecd7c0 !important;
+    background-size:50px !important;
+}
+.modal-header{
+    border-bottom:none !important;
+    padding-bottom:0 !important;
+}
+/*關閉按鈕待確認*/
+.modal-title{
+    font-family: "Noto Serif TC", serif;
+    font-weight: 600;
+    color: #4d220b !important;
+    font-size: 15px;
+    filter: drop-shadow(0px 0px 5px #bcb165);
+}
+
+
+
+
+@media (max-width: 1200px) {
+    /* .irasuto-header{
+        padding-top:5%;
+    } */
+}
+
+@media (max-width: 768px) {
+    .nav-button{
+        display:none; /*隱藏桌面版按鈕*/
+    }
+    .nav-button-phone{
+        float:right;
+        display:block; /*顯示手機版按鈕*/
+    }
+}
+
+@media (max-width: 900px) {
+    #page1 .nav-card-img-all{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #page1 .nav-card-img-all{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 6%;
+    }
+}
+
+@media (max-width: 420px) {
+    #page1 .nav-card-img-all{
+        grid-template-columns: 1fr;
+    }
+}
+
+/*第二頁*/
+.page2-title{
+filter: drop-shadow(0px 0px 2px #72624d);
+}
+.page2-title, .page2-content{
+    font-family: "Noto Serif TC", serif;
+    
+}
+
+.page2-content {
+    color: #a04210;
+    text-align: left !important;
+    filter: drop-shadow(0px 0px .5px #72624d);
+}
+
+.daigaku{
+     width: 95%; /* 容器寬度 */
+  
+}
+
+.carousel-control-prev{
+        opacity: 1 !important;
+    }
+.carousel-control-next{
+    opacity: 1 !important;
+}
+.carousel-indicators button{
+    width: 2.5rem  !important;
+    height: 2rem !important;
+    background: url(../../img/02/star.svg)no-repeat !important;
+    background-size: 28px!important;
+}
+.btn-close{
+    background: url(../img/02/06.png)no-repeat !important;
+    background-size: 30px!important;
+}
+.text-bottom{
+    background-color: #7a5540;
+    padding: 5%;
+    margin: 10% 5%;
+    border-radius: 30px;
+    border:4px dashed #fff;
+}
